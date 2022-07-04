@@ -19,8 +19,7 @@ def damagePrediction(imageBase64Encoded, model):
     locationArray = {0:'Front', 1:'Rear', 2:'Side'}
     for key in locationArray.keys():
         if pred_labels[0] == key:
-            print("Validating location of damage....Result:",locationArray[key])
-    print("Severity assessment complete.")
+           return {"localization" : locationArray[key]}
 
 def detectDamageLocalization(args):
     imageBase64Encoded = args["imageBase64"]
